@@ -24,7 +24,7 @@ def set_volume_muted(muted):
     sessions = AudioUtilities.GetAllSessions()
     for session in sessions:
         volume = session._ctl.QueryInterface(ISimpleAudioVolume)
-        print("volume.GetMasterVolume(): %s" % volume.GetMasterVolume())
+        #print("volume.GetMasterVolume(): %s" % volume.GetMasterVolume())
         #volume.SetMasterVolume(0.6, None) # change sessions volume
         if muted:
             volume.SetMute(1, None)#mute/unmute sessions
@@ -40,12 +40,12 @@ def main():
     while(True):
         today = get_today()
         muted = False
-        if today is "Friday":
+        if today == "Friday":
             if is_time_bigger(datetime.time(16,30)):
                 muted = True
             else:
                 muted = False
-        elif today is "Saturday":
+        elif today == "Saturday":
             if is_time_bigger(19,30):
                 muted = False
             else:
