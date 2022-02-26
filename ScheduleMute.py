@@ -1,7 +1,4 @@
 from __future__ import print_function
-from re import T
-from tkinter.messagebox import NO
-from webbrowser import get
 from pycaw.pycaw import AudioUtilities, ISimpleAudioVolume
 import time
 import datetime
@@ -32,7 +29,6 @@ def set_volume_muted(muted):
             volume.SetMute(0, None) 
 
 def get_today():
-    import datetime
     now = datetime.datetime.now()
     return now.strftime("%A")
 
@@ -46,7 +42,7 @@ def main():
             else:
                 muted = False
         elif today == "Saturday":
-            if is_time_bigger(19,30):
+            if is_time_bigger(datetime.time(19,30)):
                 muted = False
             else:
                 muted = True   
