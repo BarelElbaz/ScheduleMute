@@ -42,12 +42,12 @@ def main():
             else:
                 muted = False
         elif today == "Saturday":
-            if is_time_bigger(datetime.time(19,30)):
+            if is_time_bigger(datetime.time(21,00)):
                 muted = False
             else:
                 muted = True   
                 
-        if is_time_between(datetime.time(8,20), datetime.time(20,45)):
+        if is_time_between(datetime.time(7,30), datetime.time(21,00)):
             set_volume_muted(muted)
         else:
             set_volume_muted(True)
